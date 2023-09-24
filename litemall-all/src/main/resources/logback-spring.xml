@@ -43,17 +43,17 @@
         </filter>
     </appender>
 
-    <root level="DEBUG">
+    <root level="INFO">
         <appender-ref ref="console" />
         <appender-ref ref="file" />
         <appender-ref ref="error" />
     </root>
     <logger name="org.mybatis" level="ERROR" />
     <logger name="org.springframework" level="ERROR" />
-    <logger name="org.linlinjava.litemall.core" level="ERROR" />
-    <logger name="org.linlinjava.litemall.db" level="ERROR" />
-    <logger name="org.linlinjava.litemall.admin" level="DEBUG" />
-    <logger name="org.linlinjava.litemall.wx" level="DEBUG" />
-    <logger name="org.linlinjava.litemall" level="DEBUG" />
+    <logger name="org.joy.litemall.core" level="ERROR" />
+    <logger name="org.joy.litemall.db" level="ERROR" />
+    <logger name="org.joy.litemall.admin" level="DEBUG" />
+    <logger name="org.joy.litemall.wx" level="DEBUG" />
+    <logger name="org.joy.litemall" level="DEBUG" />
     <logger name="o.a.h.i.c.PoolingHttpClientConnectionManager" level="INFO" />
 </configuration>
