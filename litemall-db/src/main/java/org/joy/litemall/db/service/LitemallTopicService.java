@@ -18,7 +18,7 @@ public class LitemallTopicService {
     private LitemallTopic.Column[] columns = new LitemallTopic.Column[]{LitemallTopic.Column.id, LitemallTopic.Column.title, LitemallTopic.Column.subtitle, LitemallTopic.Column.price, LitemallTopic.Column.picUrl, LitemallTopic.Column.readCount};
 
     public List<LitemallTopic> queryList(int offset, int limit) {
-        return queryList(offset, limit, "add_time", "desc");
+        return queryList(offset, limit, "sort_order", "desc");
     }
 
     public List<LitemallTopic> queryList(int offset, int limit, String sort, String order) {

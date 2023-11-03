@@ -52,9 +52,14 @@ Page({
     // 页面关闭
   },
   goLogin() {
+    console.log(this.data.hasLogin)
     if (!this.data.hasLogin) {
       wx.navigateTo({
         url: "/pages/auth/login/login"
+      });
+    } else {
+      wx.navigateTo({
+        url: "/pages/ucenter/info/index"
       });
     }
   },

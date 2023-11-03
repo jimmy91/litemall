@@ -15,6 +15,7 @@
     "pages/ucenter/couponSelect/couponSelect",
     "pages/ucenter/collect/collect",
     "pages/auth/login/login",
+    "pages/ucenter/info/index",
     "pages/auth/accountLogin/accountLogin",
     "pages/auth/register/register",
     "pages/auth/reset/reset",
@@ -44,12 +45,13 @@
   ],
   "window": {
     "navigationBarBackgroundColor": "#FFFFFF",
-    "navigationBarTitleText": "litemall小程序商城",
+    "navigationBarTitleText": "乐享驿馆",
     "enablePullDownRefresh": false,
     "navigationBarTextStyle": "black",
     "backgroundColor": "#FFFFFF",
     "backgroundTextStyle": "dark"
   },
+  
   "tabBar": {
     "backgroundColor": "#fafafa",
     "borderStyle": "white",
@@ -62,12 +64,7 @@
         "selectedIconPath": "static/images/home@selected.png",
         "text": "首页"
       },
-      {
-        "pagePath": "pages/catalog/catalog",
-        "iconPath": "static/images/category.png",
-        "selectedIconPath": "static/images/category@selected.png",
-        "text": "分类"
-      },
+   
       {
         "pagePath": "pages/cart/cart",
         "iconPath": "static/images/cart.png",
@@ -82,6 +79,7 @@
       }
     ]
   },
+  
   "networkTimeout": {
     "request": 10000,
     "connectSocket": 10000,
@@ -102,5 +100,8 @@
     "van-checkbox": "./lib/vant-weapp/checkbox/index",
     "van-steps": "./lib/vant-weapp/steps/index"
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui": true
+  }
 }

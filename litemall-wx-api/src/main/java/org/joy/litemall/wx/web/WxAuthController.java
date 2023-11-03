@@ -3,6 +3,7 @@ package org.joy.litemall.wx.web;
 import cn.binarywang.wx.miniapp.api.WxMaService;
 import cn.binarywang.wx.miniapp.bean.WxMaJscode2SessionResult;
 import cn.binarywang.wx.miniapp.bean.WxMaPhoneNumberInfo;
+import cn.binarywang.wx.miniapp.bean.WxMaUserInfo;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.joy.litemall.wx.dto.UserInfo;
@@ -486,7 +487,7 @@ public class WxAuthController {
         if(userId == null){
             return ResponseUtil.unlogin();
         }
-        String avatar = JacksonUtil.parseString(body, "avatar");
+        String avatar = JacksonUtil.parseString(body, "avatarUrl");
         Byte gender = JacksonUtil.parseByte(body, "gender");
         String nickname = JacksonUtil.parseString(body, "nickname");
 

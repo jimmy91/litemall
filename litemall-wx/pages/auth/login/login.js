@@ -5,14 +5,14 @@ var user = require('../../../utils/user.js');
 var app = getApp();
 Page({
   data: {
-    canIUseGetUserProfile: false,
+    canIUseGetUserProfile: true,
   },
   onLoad: function(options) {
     // 页面初始化 options为页面跳转所带来的参数
     // 页面渲染完成
     if (wx.getUserProfile) {
       this.setData({
-        canIUseGetUserProfile: true
+        canIUseGetUserProfile: false
       })
     }
   },
@@ -51,9 +51,9 @@ Page({
       this.doLogin(e.detail.userInfo)
     }
   },
-  doLogin: function(userInfo) {
+  doLogin: function(res) {
     user.checkLogin().catch(() => {
-      user.loginByWeixin(userInfo).then(res => {
+      user.loginByWeixin(res).then(res => {
         app.globalData.hasLogin = true;
         wx.navigateBack({
           delta: 1

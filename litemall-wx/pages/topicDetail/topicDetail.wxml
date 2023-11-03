@@ -6,7 +6,7 @@
   <scroll-view class="sv-goods" wx:if="{{topicGoods.length > 0 }}">
     <view class="topic-goods">
       <view class="h">
-        <text class="t">专题商品</text>     
+        <text class="t">商品列表</text>     
         <van-icon class="i" bindtap="addCollectOrNot" name="star" wx:if="{{collect}}" color="#ab956d"/>
         <van-icon class="i" bindtap="addCollectOrNot" name="star-o" wx:else/>
       </view>
@@ -54,7 +54,7 @@
       <text class="txt">等你来留言</text>
     </view>
   </scroll-view>
-  <scroll-view class="rec-box">
+  <!-- <scroll-view class="rec-box">
     <view class="h">
       <text class="txt">专题推荐</text>
     </view>
@@ -64,5 +64,5 @@
         <text class="title">{{item.title}}</text>
       </navigator>
     </view>
-  </scroll-view>
-</scroll-view>
+  </scroll-view>-->
+</scroll-view> 

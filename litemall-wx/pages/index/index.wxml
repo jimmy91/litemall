@@ -21,12 +21,12 @@
         </swiper-item>
     </swiper>
     <!-- 分类 -->
-    <view class="m-menu">
+    <!-- <view class="m-menu">
         <navigator class="item" url="/pages/category/category?id={{item.id}}" wx:for="{{channel}}" wx:key="id">
             <image src="{{item.iconUrl}}" background-size="cover"></image>
             <text>{{item.name}}</text>
         </navigator>
-    </view>
+    </view> -->
     <view class="a-section a-coupon" wx:if="{{coupon.length > 0}}">
         <view class="h">
             <view class="title">
@@ -60,6 +60,32 @@
             </view>
         </view>
     </view>
+
+    <!-- 专题区 -->
+    <view class="a-section a-topic" wx:if="topics.length > 0" hidden="{{topics.length <= 0}}">
+        <view class="h">
+            <view>
+                <navigator url="/pages/topic/topic">
+                    <text class="txt">精选推荐</text>
+                </navigator>
+            </view>
+        </view>
+        <view class="b">
+            <scroll-view scroll-x class="list">
+                <view class="item" wx:for="{{topics}}" wx:for-index="index" wx:for-item="item" wx:key="id">
+                    <navigator url="../topicDetail/topicDetail?id={{item.id}}">
+                        <image class="img" src="{{item.picUrl}}" background-size="cover"></image>
+                        <view class="np">
+                            <text class="name">{{item.title}}</text>
+                            <text class="price">￥{{item.price}}元起</text>
+                        </view>
+                        <text class="desc">{{item.subtitle}}</text>
+                    </navigator>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+
     <!-- 团购专区 start -->
     <view class="a-section a-groupon" wx:if="{{groupons.length > 0}}">
         <view class="h">
@@ -99,7 +125,7 @@
     <view class="a-section a-brand">
         <view class="h">
             <navigator url="../brand/brand">
-                <text class="txt">品牌制造商直供</text>
+                <text class="txt">邻里直达</text>
             </navigator>
         </view>
         <view class="b">
@@ -108,9 +134,10 @@
                     <view class="wrap">
                         <image class="img" src="{{item.picUrl}}" mode="aspectFill"></image>
                         <view class="mt">
-                            <text class="brand">{{item.name}}</text>
+                             <!-- <text class="brand">{{item.name}}</text>
                             <text class="price">{{item.floorPrice}}</text>
                             <text class="unit">元起</text>
+                            -->
                         </view>
                     </view>
                 </navigator>
@@ -121,7 +148,7 @@
         <view class="h">
             <view>
                 <navigator url="../newGoods/newGoods">
-                    <text class="txt">周一周四 · 新品首发</text>
+                    <text class="txt">好物分享</text>
                 </navigator>
             </view>
         </view>
@@ -158,29 +185,7 @@
             </view>
         </view>
     </view>
-    <view class="a-section a-topic" wx:if="topics.length > 0" hidden="{{topics.length <= 0}}">
-        <view class="h">
-            <view>
-                <navigator url="/pages/topic/topic">
-                    <text class="txt">专题精选</text>
-                </navigator>
-            </view>
-        </view>
-        <view class="b">
-            <scroll-view scroll-x class="list">
-                <view class="item" wx:for="{{topics}}" wx:for-index="index" wx:for-item="item" wx:key="id">
-                    <navigator url="../topicDetail/topicDetail?id={{item.id}}">
-                        <image class="img" src="{{item.picUrl}}" background-size="cover"></image>
-                        <view class="np">
-                            <text class="name">{{item.title}}</text>
-                            <text class="price">￥{{item.price}}元起</text>
-                        </view>
-                        <text class="desc">{{item.subtitle}}</text>
-                    </navigator>
-                </view>
-            </scroll-view>
-        </view>
-    </view>
+    
     <view class="good-grid" wx:for="{{floorGoods}}" wx:key="id">
         <view class="h" wx:if="{{item.goodsList.length>0}}">
             <text>{{item.name}}</text>
@@ -200,4 +205,6 @@
             <view class="txt">{{'更多'+item.name+'好物 >'}}</view>
         </navigator>
     </view>
+ 
+    
 </view>

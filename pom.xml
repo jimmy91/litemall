@@ -100,7 +100,7 @@
                 <artifactId>weixin-java-pay</artifactId>
                 <version>4.1.0</version>
             </dependency>
-
+            <!--  http://binary.ac.cn/weixin-java-miniapp-javadoc/  -->
             <dependency>
                 <groupId>com.github.binarywang</groupId>
                 <artifactId>weixin-java-miniapp</artifactId>

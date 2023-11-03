@@ -6,11 +6,11 @@
     </view>
   </view>
   <view class='login' wx:else>
-    <view class="service-policy">
+    <!-- <view class="service-policy">
       <view class="item">30天无忧退货</view>
       <view class="item">48小时快速退款</view>
       <view class="item">满88元免邮费</view>
-    </view>
+    </view> -->
     <view class="no-cart" wx:if="{{cartGoods.length <= 0}}">
       <view class="c">
         <text>空空如也~</text>
@@ -52,7 +52,7 @@
         <view class='action_btn_area'>
           <view class="{{!isEditCart ? 'edit' : 'sure'}}" bindtap="editCart">{{!isEditCart ? '编辑' : '完成'}}</view>
           <view class="delete" bindtap="deleteCart" wx:if="{{isEditCart}}">删除({{cartTotal.checkedGoodsCount}})</view>
-          <view class="checkout" bindtap="checkoutOrder" wx:if="{{!isEditCart}}">下单</view>
+          <view class="checkout" bindtap="checkoutOrder" wx:if="{{!isEditCart}}">0元预订</view>
           <!-- </view>  -->
         </view>
       </view>

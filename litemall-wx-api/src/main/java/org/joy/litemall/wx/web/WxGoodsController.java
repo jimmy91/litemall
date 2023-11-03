@@ -313,7 +313,9 @@ public class WxGoodsController {
 
 		// 查找六个相关商品
 		int related = 6;
-		List<LitemallGoods> goodsList = goodsService.queryByCategory(cid, 0, related);
+		// List<LitemallGoods> goodsList = goodsService.queryByCategory(cid, 0, related);
+		List<LitemallGoods> goodsList = goodsService.querySelective(null, goods.getBrandId(), null, null,
+				null, 0, 6, null, null);
 		return ResponseUtil.okList(goodsList);
 	}
 
