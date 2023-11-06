@@ -154,7 +154,11 @@ public class WxCartController {
             else{
                 cart.setPicUrl(product.getUrl());
             }
-            cart.setPrice(product.getPrice());
+            if(goods.getIsReservation()){
+                cart.setPrice(BigDecimal.ZERO);
+            }else{
+                cart.setPrice(product.getPrice());
+            }
             cart.setSpecifications(product.getSpecifications());
             cart.setUserId(userId);
             cart.setChecked(true);
@@ -228,7 +232,11 @@ public class WxCartController {
             else{
                 cart.setPicUrl(product.getUrl());
             }
-            cart.setPrice(product.getPrice());
+            if(goods.getIsReservation()){
+                cart.setPrice(BigDecimal.ZERO);
+            }else{
+                cart.setPrice(product.getPrice());
+            }
             cart.setSpecifications(product.getSpecifications());
             cart.setUserId(userId);
             cart.setChecked(true);

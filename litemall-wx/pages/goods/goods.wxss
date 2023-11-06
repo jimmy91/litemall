@@ -38,7 +38,7 @@
 
 .goods-info {
   width: 750rpx;
-  height: 306rpx;
+  height: 256rpx;
   overflow: hidden;
   background: #fff;
 }
@@ -96,15 +96,15 @@
 }
 
 .goods-info .desc {
-  height: 43rpx;
-  margin-bottom: 41rpx;
+  height: 55rpx;
+  margin-bottom: 20rpx;
   font-size: 24rpx;
   line-height: 36rpx;
   color: #999;
 }
 
 .goods-info .price {
-  height: 70rpx;
+  height: 50rpx;
   align-content: center;
 }
 
@@ -123,7 +123,7 @@
 }
 
 .goods-info .brand {
-  margin-top: 23rpx;
+  margin-top: 20rpx;
   min-height: 40rpx;
   text-align: left;
 }

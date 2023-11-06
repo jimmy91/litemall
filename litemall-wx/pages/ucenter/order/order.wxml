@@ -7,7 +7,7 @@
       <view class="txt">待付款</view>
     </view>
     <view class="item {{ showType == 2 ? 'active' : ''}}" bindtap="switchTab" data-index='2'>
-      <view class="txt">已预订</view>
+      <view class="txt">已下单</view>
     </view>
     <view class="item {{ showType == 3 ? 'active' : ''}}" bindtap="switchTab" data-index='3'>
       <view class="txt">待收货</view>

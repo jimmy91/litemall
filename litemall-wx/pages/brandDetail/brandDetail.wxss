@@ -92,10 +92,10 @@ page {
 .cate-item .item .name {
   display: block;
   width: 365.625rpx;
-  height: 35rpx;
+  height: 40rpx;
   padding: 0 20rpx;
   overflow: hidden;
-  margin: 11.5rpx 0 22rpx 0;
+  margin: 5rpx 0 2rpx 0;
   text-align: center;
   font-size: 30rpx;
   color: #333;

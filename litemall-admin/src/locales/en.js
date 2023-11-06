@@ -491,6 +491,8 @@ export default {
       detail: 'Details'
     },
     value: {
+      is_reservation_true: 'true',
+      is_reservation_false: 'false',
       is_new_true: 'New',
       is_new_false: 'Not new',
       is_hot_true: 'Hot',

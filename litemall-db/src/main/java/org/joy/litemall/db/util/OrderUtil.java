@@ -9,7 +9,7 @@ import java.util.List;
  * 订单流程：下单成功－》支付订单－》发货－》收货
  * 订单状态：
  * 101 订单生成，未支付；102，下单未支付用户取消；103，下单未支付超期系统自动取消
- * 201 支付完成，商家未发货；202，订单生产，已付款未发货，用户申请退款；203，管理员执行退款操作，确认退款成功；
+ * 200 无支付，预订单  201 支付完成，商家未发货；202，订单生产，已付款未发货，用户申请退款；203，管理员执行退款操作，确认退款成功；
  * 301 商家发货，用户未确认；
  * 401 用户确认收货，订单结束； 402 用户没有确认收货，但是快递反馈已收货后，超过一定时间，系统自动确认收货，订单结束。
  *
@@ -22,6 +22,7 @@ import java.util.List;
 public class OrderUtil {
 
     public static final Short STATUS_CREATE = 101;
+    public static final Short STATUS_FREE = 200;
     public static final Short STATUS_PAY = 201;
     public static final Short STATUS_SHIP = 301;
     public static final Short STATUS_CONFIRM = 401;
@@ -45,6 +46,10 @@ public class OrderUtil {
 
         if (status == 103) {
             return "已取消(系统)";
+        }
+
+        if (status == 200) {
+            return "已预订";
         }
 
         if (status == 201) {
@@ -90,6 +95,10 @@ public class OrderUtil {
         } else if (status == 102 || status == 103) {
             // 如果订单已经取消或是已完成，则可删除
             handleOption.setDelete(true);
+        } else if (status == 200) {
+            // 0元预订单
+            handleOption.setCancel(true);
+            handleOption.setRefund(false);
         } else if (status == 201) {
             // 如果订单已付款，没有发货，则可退款
             handleOption.setRefund(true);
@@ -128,6 +137,7 @@ public class OrderUtil {
             status.add((short) 101);
         } else if (showType.equals(2)) {
             // 待发货订单
+            status.add((short) 200);
             status.add((short) 201);
         } else if (showType.equals(3)) {
             // 待收货订单
@@ -153,6 +163,10 @@ public class OrderUtil {
         return OrderUtil.STATUS_CREATE != order.getOrderStatus().shortValue()
                 && OrderUtil.STATUS_CANCEL != order.getOrderStatus().shortValue()
                 && OrderUtil.STATUS_AUTO_CANCEL != order.getOrderStatus().shortValue();
+    }
+
+    public static boolean isFreeStatus(LitemallOrder litemallOrder) {
+        return OrderUtil.STATUS_FREE == litemallOrder.getOrderStatus().shortValue();
     }
 
     public static boolean isPayStatus(LitemallOrder litemallOrder) {

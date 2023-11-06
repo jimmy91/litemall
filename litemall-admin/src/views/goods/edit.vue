@@ -18,6 +18,12 @@
             <template slot="append">元</template>
           </el-input>
         </el-form-item>
+        <el-form-item :label="$t('goods_edit.form.is_reservation')" prop="isReservation">
+          <el-radio-group v-model="goods.isReservation">
+            <el-radio :label="true">{{ $t('goods_edit.value.is_reservation_true') }}</el-radio>
+            <el-radio :label="false">{{ $t('goods_edit.value.is_reservation_false') }}</el-radio>
+          </el-radio-group>
+        </el-form-item>
         <el-form-item :label="$t('goods_edit.form.is_new')" prop="isNew">
           <el-radio-group v-model="goods.isNew">
             <el-radio :label="true">{{ $t('goods_edit.value.is_new_true') }}</el-radio>

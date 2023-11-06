@@ -476,7 +476,7 @@ public class WxOrderService {
 
             LitemallOrder o = new LitemallOrder();
             o.setId(orderId);
-            o.setOrderStatus(OrderUtil.STATUS_PAY);
+            o.setOrderStatus(OrderUtil.STATUS_FREE);
             orderService.updateSelective(o);
 
             //  支付成功，有团购信息，更新团购信息

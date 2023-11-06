@@ -491,6 +491,8 @@ export default {
       detail: '商品详情'
     },
     value: {
+      is_reservation_true: '是',
+      is_reservation_false: '否',
       is_new_true: '新品',
       is_new_false: '非新品',
       is_hot_true: '热卖',
@@ -542,6 +544,7 @@ export default {
       is_new: '是否新品',
       is_hot: '是否热卖',
       is_on_sale: '是否在售',
+      is_reservation: '是否预定',
       pic_url: '商品图片',
       gallery: '宣传画廊',
       unit: '商品单位',
@@ -561,6 +564,8 @@ export default {
       attribute_value: '商品参数值'
     },
     value: {
+      is_reservation_true: '是',
+      is_reservation_false: '否',
       is_new_true: '新品',
       is_new_false: '非新品',
       is_hot_true: '热卖',

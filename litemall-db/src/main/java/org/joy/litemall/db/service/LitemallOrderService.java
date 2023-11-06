@@ -173,6 +173,8 @@ public class LitemallOrderService {
         for (LitemallOrder order : orders) {
             if (OrderUtil.isCreateStatus(order)) {
                 unpaid++;
+            } else if (OrderUtil.isFreeStatus(order)) {
+                unship++;
             } else if (OrderUtil.isPayStatus(order)) {
                 unship++;
             } else if (OrderUtil.isShipStatus(order)) {
