@@ -259,7 +259,7 @@
       update_time, deleted)
     values (#{orderId,jdbcType=INTEGER}, #{goodsId,jdbcType=INTEGER}, #{goodsName,jdbcType=VARCHAR}, 
       #{goodsSn,jdbcType=VARCHAR}, #{productId,jdbcType=INTEGER}, #{number,jdbcType=SMALLINT}, 
-      #{price,jdbcType=DECIMAL}, #{specifications,jdbcType=VARCHAR,typeHandler=org.joy.litemall.db.mybatis.JsonStringArrayTypeHandler},
+      #{price,jdbcType=DECIMAL}, #{specifications,jdbcType=VARCHAR,typeHandler=org.joy.litemall.db.mybatis.JsonStringArrayTypeHandler}, 
       #{picUrl,jdbcType=VARCHAR}, #{comment,jdbcType=INTEGER}, #{addTime,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP}, #{deleted,jdbcType=BIT})
   </insert>

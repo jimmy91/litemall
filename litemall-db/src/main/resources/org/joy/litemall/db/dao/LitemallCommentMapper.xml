@@ -257,7 +257,7 @@
       deleted)
     values (#{valueId,jdbcType=INTEGER}, #{type,jdbcType=TINYINT}, #{content,jdbcType=VARCHAR}, 
       #{adminContent,jdbcType=VARCHAR}, #{userId,jdbcType=INTEGER}, #{hasPicture,jdbcType=BIT}, 
-      #{picUrls,jdbcType=VARCHAR,typeHandler=org.joy.litemall.db.mybatis.JsonStringArrayTypeHandler},
+      #{picUrls,jdbcType=VARCHAR,typeHandler=org.joy.litemall.db.mybatis.JsonStringArrayTypeHandler}, 
       #{star,jdbcType=SMALLINT}, #{addTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, 
       #{deleted,jdbcType=BIT})
   </insert>

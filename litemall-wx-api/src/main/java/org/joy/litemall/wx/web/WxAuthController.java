@@ -162,6 +162,8 @@ public class WxAuthController {
             if (userService.updateById(user) == 0) {
                 return ResponseUtil.updatedDataFailed();
             }
+            userInfo.setAvatarUrl(user.getAvatar());
+            userInfo.setNickName(user.getNickname());
         }
 
         // token
@@ -487,9 +489,9 @@ public class WxAuthController {
         if(userId == null){
             return ResponseUtil.unlogin();
         }
-        String avatar = JacksonUtil.parseString(body, "avatarUrl");
+        String avatar = JacksonUtil.parseString(body, "avatar");
         Byte gender = JacksonUtil.parseByte(body, "gender");
-        String nickname = JacksonUtil.parseString(body, "nickname");
+        String nickname = JacksonUtil.parseString(body, "nickName");
 
         LitemallUser user = userService.findById(userId);
         if(!StringUtils.isEmpty(avatar)){

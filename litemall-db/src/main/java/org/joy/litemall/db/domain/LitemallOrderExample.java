@@ -4480,6 +4480,6 @@ public class LitemallOrderExample {
          *
          * @mbg.generated
          */
-        void example(LitemallOrderExample example);
+        void example(org.joy.litemall.db.domain.LitemallOrderExample example);
     }
 }

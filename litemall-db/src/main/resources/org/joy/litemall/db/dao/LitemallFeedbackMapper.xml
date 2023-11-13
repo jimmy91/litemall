@@ -257,7 +257,7 @@
       )
     values (#{userId,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
       #{feedType,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
-      #{hasPicture,jdbcType=BIT}, #{picUrls,jdbcType=VARCHAR,typeHandler=org.joy.litemall.db.mybatis.JsonStringArrayTypeHandler},
+      #{hasPicture,jdbcType=BIT}, #{picUrls,jdbcType=VARCHAR,typeHandler=org.joy.litemall.db.mybatis.JsonStringArrayTypeHandler}, 
       #{addTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{deleted,jdbcType=BIT}
       )
   </insert>

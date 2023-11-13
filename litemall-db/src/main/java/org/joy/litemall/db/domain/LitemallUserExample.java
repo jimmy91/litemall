@@ -2696,6 +2696,6 @@ public class LitemallUserExample {
          *
          * @mbg.generated
          */
-        void example(LitemallUserExample example);
+        void example(org.joy.litemall.db.domain.LitemallUserExample example);
     }
 }

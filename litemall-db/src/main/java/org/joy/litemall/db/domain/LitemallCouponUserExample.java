@@ -1859,6 +1859,6 @@ public class LitemallCouponUserExample {
          *
          * @mbg.generated
          */
-        void example(LitemallCouponUserExample example);
+        void example(org.joy.litemall.db.domain.LitemallCouponUserExample example);
     }
 }

@@ -2069,6 +2069,6 @@ public class LitemallFeedbackExample {
          *
          * @mbg.generated
          */
-        void example(LitemallFeedbackExample example);
+        void example(org.joy.litemall.db.domain.LitemallFeedbackExample example);
     }
 }

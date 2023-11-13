@@ -1239,6 +1239,6 @@ public class LitemallPermissionExample {
          *
          * @mbg.generated
          */
-        void example(LitemallPermissionExample example);
+        void example(org.joy.litemall.db.domain.LitemallPermissionExample example);
     }
 }

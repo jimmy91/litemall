@@ -1375,6 +1375,6 @@ public class LitemallSearchHistoryExample {
          *
          * @mbg.generated
          */
-        void example(LitemallSearchHistoryExample example);
+        void example(org.joy.litemall.db.domain.LitemallSearchHistoryExample example);
     }
 }

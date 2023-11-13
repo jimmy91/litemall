@@ -1638,6 +1638,6 @@ public class LitemallBrandExample {
          *
          * @mbg.generated
          */
-        void example(LitemallBrandExample example);
+        void example(org.joy.litemall.db.domain.LitemallBrandExample example);
     }
 }

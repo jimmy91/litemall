@@ -260,7 +260,7 @@
       )
     values (#{aftersaleSn,jdbcType=VARCHAR}, #{orderId,jdbcType=INTEGER}, #{userId,jdbcType=INTEGER}, 
       #{type,jdbcType=SMALLINT}, #{reason,jdbcType=VARCHAR}, #{amount,jdbcType=DECIMAL}, 
-      #{pictures,jdbcType=VARCHAR,typeHandler=org.joy.litemall.db.mybatis.JsonStringArrayTypeHandler},
+      #{pictures,jdbcType=VARCHAR,typeHandler=org.joy.litemall.db.mybatis.JsonStringArrayTypeHandler}, 
       #{comment,jdbcType=VARCHAR}, #{status,jdbcType=SMALLINT}, #{handleTime,jdbcType=TIMESTAMP}, 
       #{addTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{deleted,jdbcType=BIT}
       )

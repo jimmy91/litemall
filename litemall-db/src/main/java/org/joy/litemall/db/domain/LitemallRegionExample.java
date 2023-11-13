@@ -1102,6 +1102,6 @@ public class LitemallRegionExample {
          *
          * @mbg.generated
          */
-        void example(LitemallRegionExample example);
+        void example(org.joy.litemall.db.domain.LitemallRegionExample example);
     }
 }

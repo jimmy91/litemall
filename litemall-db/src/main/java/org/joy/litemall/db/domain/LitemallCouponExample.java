@@ -3078,6 +3078,6 @@ public class LitemallCouponExample {
          *
          * @mbg.generated
          */
-        void example(LitemallCouponExample example);
+        void example(org.joy.litemall.db.domain.LitemallCouponExample example);
     }
 }

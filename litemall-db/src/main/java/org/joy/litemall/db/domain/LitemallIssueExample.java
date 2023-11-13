@@ -1249,6 +1249,6 @@ public class LitemallIssueExample {
          *
          * @mbg.generated
          */
-        void example(LitemallIssueExample example);
+        void example(org.joy.litemall.db.domain.LitemallIssueExample example);
     }
 }

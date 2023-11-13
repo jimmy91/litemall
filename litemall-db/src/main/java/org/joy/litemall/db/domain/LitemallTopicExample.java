@@ -1944,6 +1944,6 @@ public class LitemallTopicExample {
          *
          * @mbg.generated
          */
-        void example(LitemallTopicExample example);
+        void example(org.joy.litemall.db.domain.LitemallTopicExample example);
     }
 }

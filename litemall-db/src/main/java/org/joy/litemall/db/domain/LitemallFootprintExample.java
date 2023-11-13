@@ -1229,6 +1229,6 @@ public class LitemallFootprintExample {
          *
          * @mbg.generated
          */
-        void example(LitemallFootprintExample example);
+        void example(org.joy.litemall.db.domain.LitemallFootprintExample example);
     }
 }

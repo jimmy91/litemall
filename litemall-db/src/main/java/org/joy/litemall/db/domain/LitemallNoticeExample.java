@@ -1375,6 +1375,6 @@ public class LitemallNoticeExample {
          *
          * @mbg.generated
          */
-        void example(LitemallNoticeExample example);
+        void example(org.joy.litemall.db.domain.LitemallNoticeExample example);
     }
 }

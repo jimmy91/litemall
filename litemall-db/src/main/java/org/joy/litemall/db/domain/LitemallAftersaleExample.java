@@ -2312,6 +2312,6 @@ public class LitemallAftersaleExample {
          *
          * @mbg.generated
          */
-        void example(LitemallAftersaleExample example);
+        void example(org.joy.litemall.db.domain.LitemallAftersaleExample example);
     }
 }

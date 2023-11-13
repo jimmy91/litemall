@@ -298,7 +298,7 @@
       content)
     values (#{title,jdbcType=VARCHAR}, #{subtitle,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, 
       #{readCount,jdbcType=VARCHAR}, #{picUrl,jdbcType=VARCHAR}, #{sortOrder,jdbcType=INTEGER}, 
-      #{goods,jdbcType=VARCHAR,typeHandler=org.joy.litemall.db.mybatis.JsonIntegerArrayTypeHandler},
+      #{goods,jdbcType=VARCHAR,typeHandler=org.joy.litemall.db.mybatis.JsonIntegerArrayTypeHandler}, 
       #{addTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{deleted,jdbcType=BIT}, 
       #{content,jdbcType=LONGVARCHAR})
   </insert>

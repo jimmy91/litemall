@@ -94,7 +94,7 @@
           <el-cascader :options="categoryList" expand-trigger="hover" clearable @change="handleCategoryChange" />
         </el-form-item>
 
-        <el-form-item :label="$t('goods_edit.form.brand_id')">
+        <el-form-item :rules="rules" :label="$t('goods_edit.form.brand_id')">
           <el-select v-model="goods.brandId" clearable>
             <el-option v-for="item in brandList" :key="item.value" :label="item.label" :value="item.value" />
           </el-select>
@@ -374,6 +374,7 @@ export default {
       attributes: [],
       rules: {
         goodsSn: [{ required: true, message: '商品编号不能为空', trigger: 'blur' }],
+        brandId: [{ required: true, message: '所属品牌商不能为空', trigger: 'blur' }],
         name: [{ required: true, message: '商品名称不能为空', trigger: 'blur' }]
       },
       editorInit: {

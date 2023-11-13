@@ -1647,6 +1647,6 @@ public class LitemallStorageExample {
          *
          * @mbg.generated
          */
-        void example(LitemallStorageExample example);
+        void example(org.joy.litemall.db.domain.LitemallStorageExample example);
     }
 }

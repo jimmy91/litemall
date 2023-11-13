@@ -1355,6 +1355,6 @@ public class LitemallCollectExample {
          *
          * @mbg.generated
          */
-        void example(LitemallCollectExample example);
+        void example(org.joy.litemall.db.domain.LitemallCollectExample example);
     }
 }

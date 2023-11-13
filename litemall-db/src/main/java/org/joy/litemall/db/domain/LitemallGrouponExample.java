@@ -1995,6 +1995,6 @@ public class LitemallGrouponExample {
          *
          * @mbg.generated
          */
-        void example(LitemallGrouponExample example);
+        void example(org.joy.litemall.db.domain.LitemallGrouponExample example);
     }
 }

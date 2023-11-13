@@ -269,7 +269,7 @@
     values (#{name,jdbcType=VARCHAR}, #{desc,jdbcType=VARCHAR}, #{tag,jdbcType=VARCHAR}, 
       #{total,jdbcType=INTEGER}, #{discount,jdbcType=DECIMAL}, #{min,jdbcType=DECIMAL}, 
       #{limit,jdbcType=SMALLINT}, #{type,jdbcType=SMALLINT}, #{status,jdbcType=SMALLINT}, 
-      #{goodsType,jdbcType=SMALLINT}, #{goodsValue,jdbcType=VARCHAR,typeHandler=org.joy.litemall.db.mybatis.JsonIntegerArrayTypeHandler},
+      #{goodsType,jdbcType=SMALLINT}, #{goodsValue,jdbcType=VARCHAR,typeHandler=org.joy.litemall.db.mybatis.JsonIntegerArrayTypeHandler}, 
       #{code,jdbcType=VARCHAR}, #{timeType,jdbcType=SMALLINT}, #{days,jdbcType=SMALLINT}, 
       #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, #{addTime,jdbcType=TIMESTAMP}, 
       #{updateTime,jdbcType=TIMESTAMP}, #{deleted,jdbcType=BIT})

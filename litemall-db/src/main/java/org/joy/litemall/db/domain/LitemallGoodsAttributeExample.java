@@ -1375,6 +1375,6 @@ public class LitemallGoodsAttributeExample {
          *
          * @mbg.generated
          */
-        void example(LitemallGoodsAttributeExample example);
+        void example(org.joy.litemall.db.domain.LitemallGoodsAttributeExample example);
     }
 }

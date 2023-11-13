@@ -5,6 +5,7 @@ import org.joy.litemall.db.domain.LitemallStorage;
 import org.joy.litemall.db.service.LitemallStorageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
+import org.springframework.util.StringUtils;
 
 import java.io.InputStream;
 import java.nio.file.Path;
@@ -43,8 +44,11 @@ public class StorageService {
      * @param contentType   文件类型
      * @param fileName      文件索引名
      */
-    public LitemallStorage store(InputStream inputStream, long contentLength, String contentType, String fileName) {
+    public LitemallStorage store(InputStream inputStream, long contentLength, String contentType, String fileName, String path) {
         String key = generateKey(fileName);
+        if(!StringUtils.isEmpty(path)){
+            key = path +"/"+ key;
+        }
         storage.store(inputStream, contentLength, contentType, key);
 
         String url = generateUrl(key);

@@ -1627,6 +1627,6 @@ public class LitemallKeywordExample {
          *
          * @mbg.generated
          */
-        void example(LitemallKeywordExample example);
+        void example(org.joy.litemall.db.domain.LitemallKeywordExample example);
     }
 }

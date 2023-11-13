@@ -46,10 +46,11 @@ public class AdminStorageController {
     @RequiresPermissions("admin:storage:create")
     @RequiresPermissionsDesc(menu = {"系统管理", "对象存储"}, button = "上传")
     @PostMapping("/create")
-    public Object create(@RequestParam("file") MultipartFile file) throws IOException {
+    public Object create(@RequestParam("file") MultipartFile file,
+                         @RequestParam(required = false, defaultValue = "default") String path) throws IOException {
         String originalFilename = file.getOriginalFilename();
         LitemallStorage litemallStorage = storageService.store(file.getInputStream(), file.getSize(),
-                file.getContentType(), originalFilename);
+                file.getContentType(), originalFilename, path);
         return ResponseUtil.ok(litemallStorage);
     }
 

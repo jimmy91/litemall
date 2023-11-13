@@ -1909,6 +1909,6 @@ public class LitemallLogExample {
          *
          * @mbg.generated
          */
-        void example(LitemallLogExample example);
+        void example(org.joy.litemall.db.domain.LitemallLogExample example);
     }
 }

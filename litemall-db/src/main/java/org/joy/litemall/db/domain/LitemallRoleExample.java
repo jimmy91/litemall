@@ -1375,6 +1375,6 @@ public class LitemallRoleExample {
          *
          * @mbg.generated
          */
-        void example(LitemallRoleExample example);
+        void example(org.joy.litemall.db.domain.LitemallRoleExample example);
     }
 }

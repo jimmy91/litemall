@@ -2317,6 +2317,6 @@ public class LitemallAddressExample {
          *
          * @mbg.generated
          */
-        void example(LitemallAddressExample example);
+        void example(org.joy.litemall.db.domain.LitemallAddressExample example);
     }
 }

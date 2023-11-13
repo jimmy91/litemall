@@ -2045,6 +2045,6 @@ public class LitemallCategoryExample {
          *
          * @mbg.generated
          */
-        void example(LitemallCategoryExample example);
+        void example(org.joy.litemall.db.domain.LitemallCategoryExample example);
     }
 }

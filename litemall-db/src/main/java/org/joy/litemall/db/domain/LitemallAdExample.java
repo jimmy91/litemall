@@ -2025,6 +2025,6 @@ public class LitemallAdExample {
          *
          * @mbg.generated
          */
-        void example(LitemallAdExample example);
+        void example(org.joy.litemall.db.domain.LitemallAdExample example);
     }
 }

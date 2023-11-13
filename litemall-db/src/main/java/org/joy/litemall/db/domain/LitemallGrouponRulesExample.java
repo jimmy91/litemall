@@ -1880,6 +1880,6 @@ public class LitemallGrouponRulesExample {
          *
          * @mbg.generated
          */
-        void example(LitemallGrouponRulesExample example);
+        void example(org.joy.litemall.db.domain.LitemallGrouponRulesExample example);
     }
 }

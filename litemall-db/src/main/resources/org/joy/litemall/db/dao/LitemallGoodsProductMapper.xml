@@ -250,7 +250,7 @@
       price, `number`, url, 
       add_time, update_time, deleted
       )
-    values (#{goodsId,jdbcType=INTEGER}, #{specifications,jdbcType=VARCHAR,typeHandler=org.joy.litemall.db.mybatis.JsonStringArrayTypeHandler},
+    values (#{goodsId,jdbcType=INTEGER}, #{specifications,jdbcType=VARCHAR,typeHandler=org.joy.litemall.db.mybatis.JsonStringArrayTypeHandler}, 
       #{price,jdbcType=DECIMAL}, #{number,jdbcType=INTEGER}, #{url,jdbcType=VARCHAR}, 
       #{addTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP}, #{deleted,jdbcType=BIT}
       )
