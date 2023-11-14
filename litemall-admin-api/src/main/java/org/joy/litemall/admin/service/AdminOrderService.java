@@ -7,6 +7,7 @@ import com.github.binarywang.wxpay.exception.WxPayException;
 import com.github.binarywang.wxpay.service.WxPayService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.joy.litemall.admin.util.PermissionUtil;
 import org.joy.litemall.core.notify.NotifyService;
 import org.joy.litemall.core.notify.NotifyType;
 import org.joy.litemall.core.util.JacksonUtil;
@@ -55,7 +56,8 @@ public class AdminOrderService {
 
     public Object list(String nickname, String consignee, String orderSn, LocalDateTime start, LocalDateTime end, List<Short> orderStatusArray,
                        Integer page, Integer limit, String sort, String order) {
-        Map<String, Object> data = (Map)orderService.queryVoSelective(nickname, consignee, orderSn, start, end, orderStatusArray, page, limit, sort, order);
+        List<Integer> brandIds = PermissionUtil.listPermissionBrandIds();
+        Map<String, Object> data = (Map)orderService.queryVoSelective(brandIds, nickname, consignee, orderSn, start, end, orderStatusArray, page, limit, sort, order);
         return ResponseUtil.ok(data);
     }
 

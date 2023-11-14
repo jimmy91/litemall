@@ -2,6 +2,8 @@ package org.joy.litemall.admin.web;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.joy.litemall.admin.annotation.RequiresPermissionsDesc;
 import org.joy.litemall.admin.vo.RegionVo;
 import org.joy.litemall.core.util.ResponseUtil;
 import org.joy.litemall.db.domain.LitemallRegion;
@@ -27,12 +29,16 @@ public class AdminRegionController {
     @Autowired
     private LitemallRegionService regionService;
 
+    @RequiresPermissions("admin:region:clist")
+    @RequiresPermissionsDesc(menu = {"商城管理", "行政区域"}, button = "查询")
     @GetMapping("/clist")
     public Object clist(@NotNull Integer id) {
         List<LitemallRegion> regionList = regionService.queryByPid(id);
         return ResponseUtil.okList(regionList);
     }
 
+    @RequiresPermissions("admin:region:list")
+    @RequiresPermissionsDesc(menu = {"商城管理", "行政区域"}, button = "查询")
     @GetMapping("/list")
     public Object list() {
         List<RegionVo> regionVoList = new ArrayList<>();

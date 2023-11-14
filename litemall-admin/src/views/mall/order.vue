@@ -84,17 +84,17 @@
       </el-table-column>
 
       <el-table-column align="center" :label="$t('mall_order.table.mobile')" prop="mobile" min-width="100" />
-
+      <!--
       <el-table-column align="center" :label="$t('mall_order.table.ship_sn')" prop="shipSn" />
 
       <el-table-column align="center" :label="$t('mall_order.table.ship_channel')" prop="shipChannel" />
-
+-->
       <el-table-column align="center" :label="$t('mall_order.table.actions')" width="250" class-name="oper">
         <template slot-scope="scope">
           <el-button type="primary" size="mini" @click="handleDetail(scope.row)">{{ $t('app.button.detail') }}</el-button>
           <el-button type="danger" size="mini" @click="handleDelete(scope.row)">{{ $t('app.button.delete') }}</el-button>
           <el-button type="warning" size="mini" @click="handlePay(scope.row)">{{ $t('mall_order.button.pay') }}</el-button>
-          <el-button type="primary" size="mini" @click="handleShip(scope.row)">{{ $t('mall_order.button.ship') }}</el-button>
+          <!-- <el-button type="primary" size="mini" @click="handleShip(scope.row)">{{ $t('mall_order.button.ship') }}</el-button>   -->
           <el-button type="danger" size="mini" @click="handleRefund(scope.row)">{{ $t('mall_order.button.refund') }}</el-button>
         </template>
       </el-table-column>
@@ -254,7 +254,7 @@
   padding: 7px 4px;
   width: 40px;
   font-size: 10px;
-  margin-left: 1px;
+  margin-left: 10px;
 }
 
 ::v-deep .el-table__expanded-cell {
@@ -295,6 +295,7 @@ const statusMap = {
   101: '未付款',
   102: '用户取消',
   103: '系统取消',
+  200: '已预定',
   201: '已付款',
   202: '申请退款',
   203: '已退款',
@@ -552,12 +553,13 @@ export default {
     handleDownload() {
       this.downloadLoading = true
       import('@/vendor/Export2Excel').then(excel => {
-        const tHeader = ['订单ID', '订单编号', '用户ID', '订单状态', '是否删除', '收货人', '收货联系电话', '收货地址']
-        const filterVal = ['id', 'orderSn', 'userId', 'orderStatus', 'isDelete', 'consignee', 'mobile', 'address']
+        const tHeader = ['订单ID', '订单编号', '用户ID', '订单状态', '订单金额（实付）', '收货人', '收货联系电话', '收货地址']
+        const filterVal = ['id', 'orderSn', 'userId', 'orderStatus', 'actualPrice', 'consignee', 'mobile', 'address']
         excel.export_json_to_excel2(tHeader, this.list, filterVal, '订单信息')
         this.downloadLoading = false
       })
     },
+
     printOrder() {
       this.$print(this.$refs.print)
       this.orderDialogVisible = false

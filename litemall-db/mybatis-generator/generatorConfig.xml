@@ -66,6 +66,8 @@
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
             <columnOverride column="role_ids" javaType="java.lang.Integer[]"
                             typeHandler="org.joy.litemall.db.mybatis.JsonIntegerArrayTypeHandler"/>
+            <columnOverride column="brand_ids" javaType="java.lang.Integer[]"
+                            typeHandler="org.joy.litemall.db.mybatis.JsonIntegerArrayTypeHandler"/>
         </table>
         <table tableName="litemall_brand">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>

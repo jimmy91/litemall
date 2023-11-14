@@ -162,6 +162,7 @@ export const asyncRoutes = [
         component: () => import('@/views/mall/region'),
         name: 'region',
         meta: {
+          perms: ['GET /admin/region/list', 'GET /admin/region/clist'],
           title: 'app.menu.mall_region',
           noCache: true
         }
@@ -187,26 +188,6 @@ export const asyncRoutes = [
         }
       },
       {
-        path: 'order',
-        component: () => import('@/views/mall/order'),
-        name: 'order',
-        meta: {
-          perms: ['GET /admin/order/list', 'GET /admin/order/detail', 'POST /admin/order/ship', 'POST /admin/order/refund', 'POST /admin/order/delete', 'POST /admin/order/reply'],
-          title: 'app.menu.mall_order',
-          noCache: true
-        }
-      },
-      {
-        path: 'aftersale',
-        component: () => import('@/views/mall/aftersale'),
-        name: 'aftersale',
-        meta: {
-          perms: ['GET /admin/aftersale/list', 'GET /admin/aftersale/detail', 'POST /admin/order/receive', 'POST /admin/aftersale/complete', 'POST /admin/aftersale/reject'],
-          title: 'app.menu.mall_aftersale',
-          noCache: true
-        }
-      },
-      {
         path: 'issue',
         component: () => import('@/views/mall/issue'),
         name: 'issue',
@@ -223,6 +204,40 @@ export const asyncRoutes = [
         meta: {
           perms: ['GET /admin/keyword/list', 'POST /admin/keyword/create', 'GET /admin/keyword/read', 'POST /admin/keyword/update', 'POST /admin/keyword/delete'],
           title: 'app.menu.mall_keyword',
+          noCache: true
+        }
+      }
+    ]
+  },
+
+  {
+    path: '/order',
+    component: Layout,
+    redirect: 'noredirect',
+    alwaysShow: true,
+    name: 'orderManage',
+    meta: {
+      title: 'app.menu.order',
+      icon: 'chart'
+    },
+    children: [
+      {
+        path: 'order',
+        component: () => import('@/views/mall/order'),
+        name: 'order',
+        meta: {
+          perms: ['GET /admin/order/list', 'GET /admin/order/detail', 'POST /admin/order/ship', 'POST /admin/order/refund', 'POST /admin/order/delete', 'POST /admin/order/reply'],
+          title: 'app.menu.order_order',
+          noCache: true
+        }
+      },
+      {
+        path: 'aftersale',
+        component: () => import('@/views/mall/aftersale'),
+        name: 'aftersale',
+        meta: {
+          perms: ['GET /admin/aftersale/list', 'GET /admin/aftersale/detail', 'POST /admin/order/receive', 'POST /admin/aftersale/complete', 'POST /admin/aftersale/reject'],
+          title: 'app.menu.order_aftersale',
           noCache: true
         }
       }
@@ -541,11 +556,11 @@ export const asyncRoutes = [
       }
     ]
   },
-  {
+  /* {
     path: 'external-link',
     component: Layout,
     redirect: 'noredirect',
-    alwaysShow: true,
+    alwaysShow: false,
     name: 'externalLink',
     meta: {
       title: 'app.menu.external_link',
@@ -581,7 +596,7 @@ export const asyncRoutes = [
         meta: { title: 'app.menu.external_link_kdniao_api', icon: 'link' }
       }
     ]
-  },
+  },*/
   {
     path: '/profile',
     component: Layout,

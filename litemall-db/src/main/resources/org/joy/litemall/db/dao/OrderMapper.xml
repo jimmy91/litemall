@@ -108,6 +108,8 @@
         on o.user_id = u.id
         left join litemall_order_goods og
         on o.id = og.order_id
+        left join litemall_goods g
+        on g.id = og.goods_id
         <where>
             <if test="query != null">
                 ${query}

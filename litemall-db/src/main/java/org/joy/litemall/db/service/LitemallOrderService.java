@@ -9,13 +9,16 @@ import org.joy.litemall.db.domain.LitemallOrderExample;
 import org.joy.litemall.db.domain.OrderVo;
 import org.joy.litemall.db.util.OrderUtil;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
+import javax.lang.model.element.Modifier;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class LitemallOrderService {
@@ -212,7 +215,7 @@ public class LitemallOrderService {
     }
 
 
-    public Map<String, Object> queryVoSelective(String nickname, String consignee, String orderSn, LocalDateTime start, LocalDateTime end, List<Short> orderStatusArray, Integer page, Integer limit, String sort, String order) {
+    public Map<String, Object> queryVoSelective(List<Integer> brandIds, String nickname, String consignee, String orderSn, LocalDateTime start, LocalDateTime end, List<Short> orderStatusArray, Integer page, Integer limit, String sort, String order) {
         List<String> querys = new ArrayList<>(4);
         if (!StringUtils.isEmpty(nickname)) {
             querys.add(" u.nickname like '%" + nickname + "%' ");
@@ -232,6 +235,9 @@ public class LitemallOrderService {
         }
         if (orderStatusArray != null && orderStatusArray.size() > 0) {
             querys.add(" o.order_status in (" + StringUtils.collectionToDelimitedString(orderStatusArray, ",") + ") ");
+        }
+        if (!CollectionUtils.isEmpty(brandIds)){
+            querys.add(" g.brand_id in (" + brandIds.stream().map(p -> String.valueOf(p)).collect(Collectors.joining(",")) + ") ");
         }
         querys.add(" o.deleted = 0 and og.deleted = 0 ");
         String query = StringUtils.collectionToDelimitedString(querys, "and");

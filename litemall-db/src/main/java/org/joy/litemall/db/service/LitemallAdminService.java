@@ -13,7 +13,11 @@ import java.util.List;
 
 @Service
 public class LitemallAdminService {
-    private final LitemallAdmin.Column[] result = new LitemallAdmin.Column[]{LitemallAdmin.Column.id, LitemallAdmin.Column.username, LitemallAdmin.Column.avatar, LitemallAdmin.Column.roleIds};
+    private final LitemallAdmin.Column[] result = new LitemallAdmin.Column[]{
+            LitemallAdmin.Column.id,
+            LitemallAdmin.Column.nickname,
+            LitemallAdmin.Column.username,
+            LitemallAdmin.Column.avatar, LitemallAdmin.Column.roleIds};
     @Resource
     private LitemallAdminMapper adminMapper;
 

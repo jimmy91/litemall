@@ -3,6 +3,7 @@ package org.joy.litemall.admin.service;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.joy.litemall.admin.dto.GoodsAllinone;
+import org.joy.litemall.admin.util.PermissionUtil;
 import org.joy.litemall.admin.vo.CatVo;
 import org.joy.litemall.core.qcode.QCodeService;
 import org.joy.litemall.core.util.ResponseUtil;
@@ -44,7 +45,8 @@ public class AdminGoodsService {
 
     public Object list(Integer goodsId, String goodsSn, String name,
                        Integer page, Integer limit, String sort, String order) {
-        List<LitemallGoods> goodsList = goodsService.querySelective(goodsId, goodsSn, name, page, limit, sort, order);
+        List<Integer> brandIds = PermissionUtil.listPermissionBrandIds();
+        List<LitemallGoods> goodsList = goodsService.querySelective(goodsId, goodsSn, name, brandIds, page, limit, sort, order);
         return ResponseUtil.okList(goodsList);
     }
 

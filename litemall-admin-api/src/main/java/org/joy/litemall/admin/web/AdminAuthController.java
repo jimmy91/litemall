@@ -130,6 +130,7 @@ public class AdminAuthController {
         Map<String, Object> adminInfo = new HashMap<String, Object>();
         adminInfo.put("nickName", admin.getUsername());
         adminInfo.put("avatar", admin.getAvatar());
+        adminInfo.put("brandIds", admin.getBrandIds());
 
         Map<Object, Object> result = new HashMap<Object, Object>();
         result.put("token", currentUser.getSession().getId());
@@ -160,6 +161,7 @@ public class AdminAuthController {
         Map<String, Object> data = new HashMap<>();
         data.put("name", admin.getUsername());
         data.put("avatar", admin.getAvatar());
+        data.put("brandIds", admin.getBrandIds());
 
         Integer[] roleIds = admin.getRoleIds();
         Set<String> roles = roleService.queryByIds(roleIds);

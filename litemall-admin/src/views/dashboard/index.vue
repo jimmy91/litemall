@@ -2,7 +2,8 @@
   <div class="dashboard-editor-container">
 
     <el-row :gutter="40" class="panel-group">
-      <el-col :xs="12" :sm="12" :lg="6" class="card-panel-col">
+      <!--  今日浏览量、总计浏览量
+        <el-col :xs="12" :sm="12" :lg="6" class="card-panel-col">
         <div class="card-panel" @click="handleSetLineChartData('newVisitis')">
           <div class="card-panel-icon-wrapper icon-people">
             <svg-icon icon-class="peoples" class-name="card-panel-icon" />
@@ -13,6 +14,7 @@
           </div>
         </div>
       </el-col>
+      -->
       <el-col :xs="12" :sm="12" :lg="6" class="card-panel-col">
         <div class="card-panel" @click="handleSetLineChartData('messages')">
           <div class="card-panel-icon-wrapper icon-message">
@@ -20,10 +22,12 @@
           </div>
           <div class="card-panel-description">
             <div class="card-panel-text">{{ $t('dashboard.section.goods_total') }}</div>
-            <count-to :start-val="0" :end-val="goodsTotal" :duration="3000" class="card-panel-num"/>
+            <count-to :start-val="0" :end-val="goodsTotal" :duration="3000" class="card-panel-num" />
           </div>
         </div>
       </el-col>
+
+      <!--
       <el-col :xs="12" :sm="12" :lg="6" class="card-panel-col">
         <div class="card-panel" @click="handleSetLineChartData('purchases')">
           <div class="card-panel-icon-wrapper icon-money">
@@ -35,6 +39,7 @@
           </div>
         </div>
       </el-col>
+            -->
       <el-col :xs="12" :sm="12" :lg="6" class="card-panel-col">
         <div class="card-panel" @click="handleSetLineChartData('shoppings')">
           <div class="card-panel-icon-wrapper icon-shoppingCard">
@@ -42,7 +47,7 @@
           </div>
           <div class="card-panel-description">
             <div class="card-panel-text">{{ $t('dashboard.section.order_total') }}</div>
-            <count-to :start-val="0" :end-val="orderTotal" :duration="3600" class="card-panel-num"/>
+            <count-to :start-val="0" :end-val="orderTotal" :duration="3600" class="card-panel-num" />
           </div>
         </div>
       </el-col>

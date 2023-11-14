@@ -14,14 +14,15 @@ export default {
       user_footprint: '会员足迹',
       user_history: '搜索历史',
       user_feedback: '意见反馈',
-      mall: '商场管理',
+      mall: '商城管理',
       mall_region: '行政区域',
-      mall_brand: '品牌制造商',
+      mall_brand: '品牌运营商',
       mall_category: '商品类目',
-      mall_order: '订单管理',
-      mall_aftersale: '售后管理',
       mall_issue: '通用问题',
       mall_keyword: '关键词',
+      order: '订单中心',
+      order_order: '订单管理',
+      order_aftersale: '售后管理',
       goods: '商品管理',
       goods_list: '商品列表',
       goods_create: '商品上架',
@@ -818,6 +819,7 @@ export default {
   },
   sys_admin: {
     table: {
+      nickname: '名称',
       id: '管理员ID',
       username: '管理员名称',
       avatar: '管理员头像',
@@ -825,7 +827,8 @@ export default {
       actions: '操作'
     },
     form: {
-      username: '管理员名称',
+      nickname: '名称',
+      username: '管理员账号',
       password: '管理员密码',
       avatar: '管理员头像',
       role_ids: '管理员角色'

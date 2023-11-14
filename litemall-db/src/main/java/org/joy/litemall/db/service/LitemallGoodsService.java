@@ -5,6 +5,7 @@ import org.joy.litemall.db.dao.LitemallGoodsMapper;
 import org.joy.litemall.db.domain.LitemallGoods;
 import org.joy.litemall.db.domain.LitemallGoodsExample;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
 
 import javax.annotation.Resource;
@@ -126,7 +127,7 @@ public class LitemallGoodsService {
         return goodsMapper.selectByExampleSelective(example, columns);
     }
 
-    public List<LitemallGoods> querySelective(Integer goodsId, String goodsSn, String name, Integer page, Integer size, String sort, String order) {
+    public List<LitemallGoods> querySelective(Integer goodsId, String goodsSn, String name, List<Integer> brandIds, Integer page, Integer size, String sort, String order) {
         LitemallGoodsExample example = new LitemallGoodsExample();
         LitemallGoodsExample.Criteria criteria = example.createCriteria();
 
@@ -139,6 +140,10 @@ public class LitemallGoodsService {
         if (!StringUtils.isEmpty(name)) {
             criteria.andNameLike("%" + name + "%");
         }
+        if(!CollectionUtils.isEmpty(brandIds)){
+            criteria.andBrandIdIn(brandIds);
+        }
+
         criteria.andDeletedEqualTo(false);
 
         if (!StringUtils.isEmpty(sort) && !StringUtils.isEmpty(order)) {

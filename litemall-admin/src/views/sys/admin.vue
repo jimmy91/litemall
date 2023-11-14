@@ -12,7 +12,7 @@
     <!-- 查询结果 -->
     <el-table v-loading="listLoading" :data="list" :element-loading-text="$t('app.message.list_loading')" border fit highlight-current-row>
       <el-table-column align="center" :label="$t('sys_admin.table.id')" prop="id" sortable />
-
+      <el-table-column align="center" :label="$t('sys_admin.table.nickname')" prop="nickname" />
       <el-table-column align="center" :label="$t('sys_admin.table.username')" prop="username" />
 
       <el-table-column align="center" :label="$t('sys_admin.table.avatar')" prop="avatar">
@@ -40,6 +40,9 @@
     <!-- 添加或修改对话框 -->
     <el-dialog :title="textMap[dialogStatus]" :visible.sync="dialogFormVisible">
       <el-form ref="dataForm" :rules="rules" :model="dataForm" status-icon label-position="left" label-width="100px" style="width: 400px; margin-left:50px;">
+        <el-form-item :label="$t('sys_admin.form.nickname')" prop="nickname">
+          <el-input v-model="dataForm.nickname" />
+        </el-form-item>
         <el-form-item :label="$t('sys_admin.form.username')" prop="username">
           <el-input v-model="dataForm.username" />
         </el-form-item>
@@ -145,9 +148,10 @@ export default {
       },
       rules: {
         username: [
-          { required: true, message: '管理员名称不能为空', trigger: 'blur' }
+          { required: true, message: '管理员账号不能为空', trigger: 'blur' }
         ],
-        password: [{ required: true, message: '密码不能为空', trigger: 'blur' }]
+        password: [{ required: true, message: '密码不能为空', trigger: 'blur' }],
+        nickname: [{ required: true, message: '名称不能为空', trigger: 'blur' }]
       },
       downloadLoading: false
     }
