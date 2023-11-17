@@ -1,11 +1,11 @@
 litemall:
   # 开发者应该设置成自己的wx相关信息
   wx:
-    app-id: wx60a959f52409bbf9
-    app-secret: 49765dbc175f1bb5604b2f82908be654
-    mch-id: 1658065012
-    mch-key: af279c122ae31e8a0d2868159e421e9c
-    notify-url: http://www.happyinnstay.com/wx/order/happyinnstay/pay-notify
+    app-id: *********
+    app-secret: **********
+    mch-id: ******
+    mch-key: *****
+    notify-url: http://*****
     # 商户证书文件路径
     # 请参考“商户证书”一节 https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=4_3
     key-path: xxxxx
